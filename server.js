@@ -10,6 +10,9 @@ const app = express()
 
 app.use(bodyParser.json())
 
+app.put('/:studentId/:props(*)', api.putStudent)
+app.get('/:studentId/:props(*)', api.getStudent)
+app.delete('/:studentId/:props(*)', api.deleteStudent)
 app.get('/health', api.getHealth)
 
 app.use(middleware.handleError)
